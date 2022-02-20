@@ -1,15 +1,15 @@
 #!/bin/bash
 
 #instalacao do docker e docker compose
-sudo apt-get update
+apt-get update
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-sudo chmod +x /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-sudo apt-get install docker.io -y
+apt-get install docker.io -y
 
 #subindo o rancher server
 docker run -d --name rancher --restart=unless-stopped --privileged -v /var/lib/ -p 80:80 -p 443:443 rancher/rancher
@@ -37,5 +37,5 @@ touch /root/.kube/config
 #jenkins auto
 sudo git clone https://github.com/GuilhermeAuras/yaml.git
 
-sudo cd /yaml/jenkins/
-sudo docker-compose up -d 
+cd /yaml/jenkins/
+docker-compose up -d 
