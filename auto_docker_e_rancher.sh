@@ -27,15 +27,10 @@ apt-get update
 
 apt-get install kubectl -y
 
-#git clone devops
-sudo git clone https://github.com/GuilhermeAuras/devops
+#git clone
+git clone https://github.com/GuilhermeAuras/devops
+git clone https://github.com/GuilhermeAuras/yamls.git
 
 #configuracao kubctl
 mkdir /root/.kube/
 touch /root/.kube/config
-
-#jenkins auto
-sudo git clone https://github.com/GuilhermeAuras/yaml.git
-
-cd /yaml/jenkins/
-docker-compose up -d 
