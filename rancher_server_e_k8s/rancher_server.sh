@@ -29,6 +29,7 @@ apt-get install kubectl -y
 
 #git clone
 git clone https://github.com/GuilhermeAuras/yamls_scripts_k8s.git
+git clone https://github.com/GuilhermeAuras/devops.git
 
 #configuracao kubctl
 mkdir /root/.kube/
