@@ -1,2 +1,1 @@
-# scripts
-scripts
+shell_scripts_k8s
