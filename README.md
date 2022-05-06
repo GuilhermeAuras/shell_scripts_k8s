@@ -1,2 +1,2 @@
 bash k8s.sh
-bash rancher_server.sh
+<br>bash rancher_server.sh
