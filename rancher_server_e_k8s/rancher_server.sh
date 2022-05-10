@@ -27,7 +27,15 @@ if [ $? -eq 0 ]; then echo "sucesso passou a instalacao do docker"; else exit 1;
 
 docker -v
 
-if [ $? -eq 0 ]; then echo "sucesso passou o docker -v"; else exit 1; fi
+if [ $? -eq 0 ]; then echo "sucesso passou a instalacao do docker"; else exit 1; fi
+
+systemctl start docker
+
+if [ $? -eq 0 ]; then echo "sucesso passou o systemctl start docker"; else exit 1; fi
+
+docker ps 
+
+if [ $? -eq 0 ]; then echo "sucesso passou o docker ps"; else exit 1; fi
 
 #subindo o rancher server
 docker run -d --name rancher --restart=unless-stopped --privileged -v /var/lib/ -p 80:80 -p 443:443 rancher/rancher:stable
