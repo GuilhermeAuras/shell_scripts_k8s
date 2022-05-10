@@ -17,9 +17,17 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 if [ $? -eq 0 ]; then echo "sucesso passou o link simbolico"; else exit 1; fi
 
+docker-compose -v
+
+if [ $? -eq 0 ]; then echo "sucesso passou o docker-compose -v"; else exit 1; fi
+
 sudo apt-get install docker.io -y
 
 if [ $? -eq 0 ]; then echo "sucesso passou a instalacao do docker"; else exit 1; fi
+
+docker -v
+
+if [ $? -eq 0 ]; then echo "sucesso passou o docker -v"; else exit 1; fi
 
 #subindo o rancher server
 docker run -d --name rancher --restart=unless-stopped --privileged -v /var/lib/ -p 80:80 -p 443:443 rancher/rancher:stable
