@@ -22,7 +22,7 @@ sudo apt-get install docker.io -y
 if [ $? -eq 0 ]; then echo "sucesso passou a instalacao do docker"; else exit 1; fi
 
 #subindo o rancher server
-docker run -d --name rancher --restart=unless-stopped --privileged -v /var/lib/ -p 80:80 -p 443:443 rancher/rancher
+docker run -d --name rancher --restart=unless-stopped --privileged -v /var/lib/ -p 80:80 -p 443:443 rancher/rancher:stable
 
 if [ $? -eq 0 ]; then echo "sucesso passou subir rancher server"; else exit 1; fi
 
